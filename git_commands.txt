@@ -1,0 +1,76 @@
+Here's a solid list of essential Git commands, organized by category.
+
+Setup & Configuration
+bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --list                    # view all settings
+Starting a Repository
+bash
+git init                             # create a new local repo
+git clone <url>                      # copy an existing repo
+Basic Workflow
+bash
+git status                           # check current state (staged/unstaged/untracked)
+git add <file>                       # stage a specific file
+git add .                            # stage all changes
+git commit -m "message"              # commit staged changes
+git commit -am "message"             # stage tracked files + commit in one step
+Viewing History
+bash
+git log                              # full commit history
+git log --oneline                    # compact one-line history
+git log --graph --oneline --all      # visual branch history
+git show <commit-hash>               # details of a specific commit
+git diff                             # unstaged changes
+git diff --staged                    # staged changes not yet committed
+Branching
+bash
+git branch                           # list branches
+git branch <name>                    # create a new branch
+git checkout <branch>                # switch to a branch
+git checkout -b <branch>             # create + switch in one step
+git switch <branch>                  # modern way to switch branches
+git switch -c <branch>               # modern way to create + switch
+git branch -d <branch>               # delete a branch (safe)
+git branch -D <branch>               # force delete a branch
+Merging & Rebasing
+bash
+git merge <branch>                   # merge a branch into current one
+git rebase <branch>                  # reapply commits on top of another base
+git merge --abort                    # cancel a merge in progress
+git rebase --abort                   # cancel a rebase in progress
+Remote Repositories
+bash
+git remote -v                        # list remotes
+git remote add origin <url>          # link a remote repo
+git push origin <branch>             # push commits to remote
+git push -u origin <branch>          # push and set upstream tracking
+git pull                             # fetch + merge from remote
+git fetch                            # download changes without merging
+Undoing Changes
+bash
+git restore <file>                   # discard changes in working directory
+git restore --staged <file>          # unstage a file (keep changes)
+git reset --soft HEAD~1              # undo last commit, keep changes staged
+git reset --mixed HEAD~1             # undo last commit, keep changes unstaged
+git reset --hard HEAD~1              # undo last commit, discard changes (careful!)
+git revert <commit-hash>             # create a new commit that undoes a commit
+Stashing (Save Work Temporarily)
+bash
+git stash                            # save uncommitted changes
+git stash list                       # list stashes
+git stash pop                        # apply + remove latest stash
+git stash apply                      # apply latest stash (keep it in list)
+git stash drop                       # delete a stash
+Tags
+bash
+git tag                              # list tags
+git tag v1.0                         # create a tag
+git push origin v1.0                 # push a tag to remote
+Miscellaneous
+bash
+git rm <file>                        # remove file from repo + working dir
+git mv <old> <new>                   # rename/move a file
+git blame <file>                     # see who changed each line
+git clean -fd                        # remove untracked files/folders
