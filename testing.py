@@ -1,5 +1,6 @@
+"""Demo module for testing Pylint."""
+
+
 def hello():
-    """
-    this is demo
-     """
-     return("hello desto")
+    """Return a demo greeting."""
+    return "hello desto"
